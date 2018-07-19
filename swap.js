@@ -10,6 +10,11 @@ class LinkedList {
     this.head = null;
   }
 
+  insertFirst(data) {
+    const node = new Node(data, this.head)
+    this.head = node;
+  }
+
   getAt(index) {
     let counter = 0;
     let node = this.head;
@@ -73,6 +78,20 @@ class LinkedList {
     }
     return counter;
   }
+}
 
 
+
+function swap(l) {
+  let counter = 0;
+  let first = l.getAt(counter);
+  let second = l.getAt(counter + 1);
+  while(counter < l.size()) {
+    l.insertAt(first.data, counter + 2);
+    l.removeAt(counter);
+    first = l.getAt(counter + 2);
+    second = l.getAt(counter + 3);
+    counter += 2;
+  }
+  return l;
 }
