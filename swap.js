@@ -1,3 +1,5 @@
+// First we declare both classes:
+
 class Node {
   constructor(data, next = null) {
     this.data = data;
@@ -9,6 +11,8 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
+
+  // Inside this class we declare all the helper functions we need:
 
   insertFirst(data) {
     const node = new Node(data, this.head)
@@ -80,6 +84,8 @@ class LinkedList {
   }
 }
 
+// Then we declare a sample linked list and populate it with nodes:
+
 let list = new LinkedList();
 list.insertFirst(3);
 list.insertFirst(6);
@@ -92,6 +98,8 @@ list.insertFirst(5);
 list.insertFirst(11);
 
 console.log(list);
+
+// Here is the actual swap function: 
 
 function swap(l) {
   let counter = 0;
